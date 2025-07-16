@@ -1,0 +1,39 @@
+{
+  "name": "art-portfolio",
+  "version": "1.0.0",
+  "description": "A modern, responsive art portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "dev": "live-server --port=8000 --open=/index.html",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Push to GitHub and enable GitHub Pages'",
+    "optimize-images": "echo 'Run image optimization script'",
+    "validate": "echo 'Run HTML/CSS validation'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/your-portfolio-repo.git"
+  },
+  "keywords": [
+    "portfolio",
+    "art",
+    "website",
+    "gallery",
+    "responsive",
+    "github-pages"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/your-portfolio-repo/issues"
+  },
+  "homepage": "https://yourusername.github.io/your-portfolio-repo",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
