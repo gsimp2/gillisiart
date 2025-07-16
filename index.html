@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Art Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">Your Name</a>
+            <a href="#" class="logo">Gillisi Art</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown"><a href="#gallery">Gallery</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#illustrations">Illustrations</a></li>
+                        <li><a href="#fore-edge">Fore-Edge Paintings</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -23,8 +29,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Creative Artist</h1>
-            <p>Bringing imagination to life through art</p>
+            <h1>Illustrator and Fore-Edge Painter</h1>
+            <p>Painting books and fantasy illustrations</p>
             <a href="#gallery" class="btn">View My Work</a>
         </div>
     </section>
@@ -35,9 +41,20 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Me</h2>
-                    <p>I'm a passionate artist who believes in the power of visual storytelling. With over 5 years of experience in various mediums, I create art that speaks to the soul and challenges perspectives.</p>
-                    <p>My work spans across digital art, traditional painting, and mixed media. Each piece is carefully crafted to evoke emotion and spark conversation.</p>
-                    <a href="#contact" class="btn">Get In Touch</a>
+                    <p>I'm Gillian, a digital illustrator and fore-edge painter. I like to draw fantasy and science
+                        fiction characters and places, especially witches, mermaids, and dragons. The books I paint are
+                        typically classic novels, sci-fi fantasy stories, and books with movie adaptations.
+                    </p>
+                    <p>If you're interested in prints of my work, check out my inprnt shop linked below. You can
+                        find me on social media @gillisiart, or email me at gillisiart@gmail.com</p>
+                    <!-- <a href="#contact" class="btn">Get In Touch</a> -->
+                    <div class="social-links">
+                        <a href="https://inprnt.com/gallery/gillisiart" title="Shop"><img src="images/0inprnt.png"></a>
+                        <a href="https://instagram.com/gillisiart" title="Instagram"><img src="images/0insta.png"></a>
+                        <a href="https://tiktok.com/gillisiart" title="Tiktok"><img src="images/0tiktok.png"></a>
+                        <a href="https://tumblr.com/gillisiart" title="Tumblr"><img src="images/0tumblr.png"></a>
+                        <a href="mailto:gillisiart@gmail.com" title="Email"><img src="images/0mail.png"></a>
+                    </div>
                 </div>
                 <div>
                     <img src="images/profile.jpg" alt="Artist Photo" class="profile-img">
@@ -57,18 +74,21 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div>
                     <h3>Let's Create Something Amazing Together</h3>
-                    <p>I'm always excited to work on new projects and collaborate with fellow creatives. Whether you're looking for custom artwork, commissions, or just want to say hello, I'd love to hear from you.</p>
+                    <p>I'm always excited to work on new projects and collaborate with fellow creatives. Whether you're
+                        looking for custom artwork, commissions, or just want to say hello, I'd love to hear from you.
+                    </p>
                     <div class="social-links">
-                        <a href="#" title="Instagram">📷</a>
-                        <a href="#" title="Twitter">🐦</a>
-                        <a href="#" title="LinkedIn">💼</a>
-                        <a href="#" title="Email">📧</a>
+                        <a href="https://instagram.com/gillisiart" title="Instagram">📷</a>
+                        <a href="https://tiktok.com/gillisiart" title="Tiktok">🐦</a>
+                        <a href="https://tumblr.com/gillisiart" title="Tumblr">💼</a>
+                        <a href="https://inprnt.com/gallery/gillisiart" title="Shop">📧</a>
+                        <a href="mailto:gillisiart@gmail.com" title="Email">📧</a>
                     </div>
                 </div>
                 <form class="contact-form" onsubmit="handleSubmit(event)">
@@ -88,12 +108,12 @@
                 </form>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p>&copy; 2025 Gillian Simpson. All rights reserved.</p>
         </div>
     </footer>
 
@@ -107,4 +127,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
