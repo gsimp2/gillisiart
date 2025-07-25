@@ -2,6 +2,7 @@
 layout: default
 title: Home
 ---
+
 <!-- Hero Section -->
 <section id="home" class="hero">
 	<div class="hero-content">
@@ -26,12 +27,15 @@ title: Home
 				<!-- <a href="#contact" class="btn">Get In Touch</a> -->
 				<div class="social-links">
 					<a href="https://inprnt.com/gallery/gillisiart" title="Shop"><img
-							src="/assets/images/0inprnt.png"></a>
+							src="{{ '/assets/images/0inprnt.png' | relative_url }}"></a>
 					<a href="https://instagram.com/gillisiart" title="Instagram"><img
-							src="/assets/images/0insta.png"></a>
-					<a href="https://tiktok.com/gillisiart" title="Tiktok"><img src="/assets/images/0tiktok.png"></a>
-					<a href="https://tumblr.com/gillisiart" title="Tumblr"><img src="/assets/images/0tumblr.png"></a>
-					<a href="mailto:gillisiart@gmail.com" title="Email"><img src="/assets/images/0mail.png"></a>
+							src="{{ '/assets/images/0insta.png' | relative_url }}"></a>
+					<a href="https://tiktok.com/gillisiart" title="Tiktok"><img
+							src="{{ '/assets/images/0tiktok.png' | relative_url }}"></a>
+					<a href="https://tumblr.com/gillisiart" title="Tumblr"><img
+							src="{{ '/assets/images/0tumblr.png' | relative_url }}"></a>
+					<a href="mailto:gillisiart@gmail.com" title="Email"><img
+							src="{{ '/assets/images/0mail.png' | relative_url }}"></a>
 				</div>
 			</div>
 			<div>
@@ -95,4 +99,7 @@ title: Home
 		<img id="modal-img" src="" alt="Gallery Image">
 	</div>
 </div>
-<script src="assets/js/main.js"></script>
+<script>
+	window.assetsPath = "{{ '/assets/images/' | relative_url }}";
+</script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>

@@ -1,64 +1,64 @@
 // Gallery data - Easy to modify
 const galleryData = [
 	{
-		thumb: "../assets/images/4Austens-main.jpg",
-		full: "../assets/images/4Austens-bottom.jpg",
+		thumb: window.assetsPath + "4Austens-main.jpg",
+		full: window.assetsPath + "4Austens-bottom.jpg",
 		title: "Jane Austen Collection",
 		medium: "Fore-Edge Painting",
 		year: "2024"
 	},
 	{
-		thumb: "../assets/images/Dune-aesthetic.jpg",
-		full: "../assets/images/Dune-main.jpg",
+		thumb: window.assetsPath + "Dune-aesthetic.jpg",
+		full: window.assetsPath + "Dune-main.jpg",
 		title: "Dune",
 		medium: "Fore-Edge Painting",
 		year: "2024"
 	},
 	{
-		thumb: "../assets/images/KingArthur-main.jpg",
-		full: "../assets/images/KingArthur-top.jpg",
+		thumb: window.assetsPath + "KingArthur-main.jpg",
+		full: window.assetsPath + "KingArthur-top.jpg",
 		title: "Arthurian Myths and Legends",
 		medium: "Fore-Edge Painting",
 		year: "2024"
 	},
 	{
-		thumb: "../assets/images/OrientExpress-main.jpg",
-		full: "../assets/images/OrientExpress-main.jpg",
+		thumb: window.assetsPath + "OrientExpress-main.jpg",
+		full: window.assetsPath + "OrientExpress-main.jpg",
 		title: "Murder on the Orient Express",
 		medium: "Fore-Edge Painting",
 		year: "2024"
 	},
 	{
-		thumb: "../assets/images/WoO-aesthetic.jpg",
-		full: "../assets/images/WoO-main.jpg",
+		thumb: window.assetsPath + "WoO-aesthetic.jpg",
+		full: window.assetsPath + "WoO-main.jpg",
 		title: "The Wizard of Oz",
 		medium: "Fore-Edge Painting",
 		year: "2025"
 	},
 	{
-		thumb: "../assets/images/Austen-stack.jpg",
-		full: "../assets/images/Austen-stack-main.jpg",
+		thumb: window.assetsPath + "Austen-stack.jpg",
+		full: window.assetsPath + "Austen-stack-main.jpg",
 		title: "Pride & Prejudice, Emma, Mansfield Park",
 		medium: "Fore-Edge Painting",
 		year: "2023"
 	},
 	{
-		thumb: "../assets/images/LOTR-lothlorien-main.jpg",
-		full: "../assets/images/LOTR-lothlorien-main.jpg",
+		thumb: window.assetsPath + "LOTR-lothlorien-main.jpg",
+		full: window.assetsPath + "LOTR-lothlorien-main.jpg",
 		title: "Lord of the Rings",
 		medium: "Fore-Edge Painting",
 		year: "2023"
 	},
 	{
-		thumb: "../assets/images/HHGTTG-main.jpg",
-		full: "../assets/images/HHGTTG-main.jpg",
+		thumb: window.assetsPath + "HHGTTG-main.jpg",
+		full: window.assetsPath + "HHGTTG-main.jpg",
 		title: "The Hitchhiker's Guide to the Galaxy",
 		medium: "Fore-Edge Painting",
 		year: "2023"
 	},
 	{
-		thumb: "../assets/images/AiW-stack-main.jpg",
-		full: "../assets/images/AiW-stack-top.jpg",
+		thumb: window.assetsPath + "AiW-stack-main.jpg",
+		full: window.assetsPath + "AiW-stack-top.jpg",
 		title: "Alice's Adventures in Wonderland",
 		medium: "Fore-Edge Painting",
 		year: "2023"

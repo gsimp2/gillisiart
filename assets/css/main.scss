@@ -1,3 +1,7 @@
+---
+---
+
+/* Your CSS rules go here */
 :root {
 	--primary-color: #B0D6F8;
 	--secondary-color: #9097EE;
@@ -117,7 +121,7 @@ nav {
 	text-align: center;
 	color: white;
 	position: relative;
-	background-image: url("../images/stack5.jpg");
+	background-image: url('{{ "/assets/images/stack5.jpg" | relative_url }}');
 	background-size: cover;
 	background-position: top;
 	background-repeat: no-repeat;
