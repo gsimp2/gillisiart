@@ -9,56 +9,56 @@ const galleryData = [
 	},
 	{
 		thumb: window.assetsPath + "Dune-aesthetic.JPG",
-		full: window.assetsPath + "Dune-main.jpg",
+		full: window.assetsPath + "Dune-main.JPG",
 		title: "Dune",
 		medium: "Fore-Edge Painting",
 		year: "2024"
 	},
 	{
-		thumb: window.assetsPath + "KingArthur-main.jpg",
-		full: window.assetsPath + "KingArthur-top.jpg",
+		thumb: window.assetsPath + "KingArthur-main.JPG",
+		full: window.assetsPath + "KingArthur-top.JPG",
 		title: "Arthurian Myths and Legends",
 		medium: "Fore-Edge Painting",
 		year: "2024"
 	},
 	{
-		thumb: window.assetsPath + "OrientExpress-main.jpg",
-		full: window.assetsPath + "OrientExpress-main.jpg",
+		thumb: window.assetsPath + "OrientExpress-main.JPG",
+		full: window.assetsPath + "OrientExpress-main.JPG",
 		title: "Murder on the Orient Express",
 		medium: "Fore-Edge Painting",
 		year: "2024"
 	},
 	{
-		thumb: window.assetsPath + "WoO-aesthetic.jpg",
-		full: window.assetsPath + "WoO-main.jpg",
+		thumb: window.assetsPath + "WoO-aesthetic.JPG",
+		full: window.assetsPath + "WoO-main.JPG",
 		title: "The Wizard of Oz",
 		medium: "Fore-Edge Painting",
 		year: "2025"
 	},
 	{
-		thumb: window.assetsPath + "Austen-stack.jpg",
-		full: window.assetsPath + "Austen-stack-main.jpg",
+		thumb: window.assetsPath + "Austen-stack.JPG",
+		full: window.assetsPath + "Austen-stack-main.JPG",
 		title: "Pride & Prejudice, Emma, Mansfield Park",
 		medium: "Fore-Edge Painting",
 		year: "2023"
 	},
 	{
-		thumb: window.assetsPath + "LOTR-lothlorien-main.jpg",
-		full: window.assetsPath + "LOTR-lothlorien-main.jpg",
+		thumb: window.assetsPath + "LOTR-lothlorien-main.JPG",
+		full: window.assetsPath + "LOTR-lothlorien-main.JPG",
 		title: "Lord of the Rings",
 		medium: "Fore-Edge Painting",
 		year: "2023"
 	},
 	{
-		thumb: window.assetsPath + "HHGTTG-main.jpg",
-		full: window.assetsPath + "HHGTTG-main.jpg",
+		thumb: window.assetsPath + "HHGTTG-main.JPG",
+		full: window.assetsPath + "HHGTTG-main.JPG",
 		title: "The Hitchhiker's Guide to the Galaxy",
 		medium: "Fore-Edge Painting",
 		year: "2023"
 	},
 	{
-		thumb: window.assetsPath + "AiW-stack-main.jpg",
-		full: window.assetsPath + "AiW-stack-top.jpg",
+		thumb: window.assetsPath + "AiW-stack-main.JPG",
+		full: window.assetsPath + "AiW-stack-top.JPG",
 		title: "Alice's Adventures in Wonderland",
 		medium: "Fore-Edge Painting",
 		year: "2023"
