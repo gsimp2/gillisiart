@@ -1,14 +1,14 @@
 // Gallery data - Easy to modify
 const galleryData = [
 	{
-		thumb: window.assetsPath + "4Austens-main.jpg",
-		full: window.assetsPath + "4Austens-bottom.jpg",
+		thumb: window.assetsPath + "4Austens-main.JPG",
+		full: window.assetsPath + "4Austens-bottom.JPG",
 		title: "Jane Austen Collection",
 		medium: "Fore-Edge Painting",
 		year: "2024"
 	},
 	{
-		thumb: window.assetsPath + "Dune-aesthetic.jpg",
+		thumb: window.assetsPath + "Dune-aesthetic.JPG",
 		full: window.assetsPath + "Dune-main.jpg",
 		title: "Dune",
 		medium: "Fore-Edge Painting",
