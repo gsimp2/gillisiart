@@ -121,7 +121,7 @@ nav {
 	text-align: center;
 	color: white;
 	position: relative;
-	background-image: url('{{ "/assets/images/stack5.jpg" | relative_url }}');
+	// background-image: url('{{ "/assets/images/stack5.jpg" | relative_url }}');
 	background-size: cover;
 	background-position: top;
 	background-repeat: no-repeat;
