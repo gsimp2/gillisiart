@@ -1,70 +1,3 @@
-// Gallery data - Easy to modify
-// const galleryData = [
-// 	{
-// 		thumb: window.assetsPath + "4Austens-main.JPG",
-// 		full: window.assetsPath + "4Austens-bottom.JPG",
-// 		title: "Jane Austen Collection",
-// 		author: "Jane Austen",
-// 		year: "2024"
-// 	},
-// 	{
-// 		thumb: window.assetsPath + "Dune-aesthetic.JPG",
-// 		full: window.assetsPath + "Dune-main.JPG",
-// 		title: "Dune",
-// 		author: "Frank Herbert",
-// 		year: "2024"
-// 	},
-// 	{
-// 		thumb: window.assetsPath + "KingArthur-main.JPG",
-// 		full: window.assetsPath + "KingArthur-top.JPG",
-// 		title: "Arthurian Myths and Legends",
-// 		author: "Edited by J.K. Jackson",
-// 		year: "2024"
-// 	},
-// 	{
-// 		thumb: window.assetsPath + "OrientExpress-main.JPG",
-// 		full: window.assetsPath + "OrientExpress-main.JPG",
-// 		title: "Murder on the Orient Express",
-// 		author: "Agatha Christie",
-// 		year: "2024"
-// 	},
-// 	{
-// 		thumb: window.assetsPath + "WoO-aesthetic.JPG",
-// 		full: window.assetsPath + "WoO-main.JPG",
-// 		title: "The Wizard of Oz",
-// 		author: "L. Frank Baum",
-// 		year: "2025"
-// 	},
-// 	{
-// 		thumb: window.assetsPath + "Austen-stack.JPG",
-// 		full: window.assetsPath + "Austen-stack-main.JPG",
-// 		title: "Pride & Prejudice, Emma, Mansfield Park",
-// 		author: "Jane Austen",
-// 		year: "2022 - 2023"
-// 	},
-// 	{
-// 		thumb: window.assetsPath + "LOTR-lothlorien-main.JPG",
-// 		full: window.assetsPath + "LOTR-lothlorien-main.JPG",
-// 		title: "Lord of the Rings",
-// 		author: "J.R.R. Tolkien",
-// 		year: "2024"
-// 	},
-// 	{
-// 		thumb: window.assetsPath + "HHGTTG-main.JPG",
-// 		full: window.assetsPath + "HHGTTG-main.JPG",
-// 		title: "The Hitchhiker's Guide to the Galaxy",
-// 		author: "Douglas Adams",
-// 		year: "2024"
-// 	},
-// 	{
-// 		thumb: window.assetsPath + "AiW-stack-main.JPG",
-// 		full: window.assetsPath + "AiW-stack-top.JPG",
-// 		title: "Alice's Adventures in Wonderland",
-// 		author: "Lewis Carroll",
-// 		year: "2023"
-// 	}
-// ];
-
 // Initialize the website when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
 	initializeGallery();
@@ -76,18 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
 // Gallery Functions
 function initializeGallery() {
 	const galleryGrid = document.getElementById('gallery-grid');
-
-	galleryData.forEach(item => {
-		const galleryItem = createGalleryItem(item);
+	galleryData.forEach((item, index) => {
+		const galleryItem = createGalleryItem(item, index);
 		galleryGrid.appendChild(galleryItem);
 	});
 }
 
-function createGalleryItem(item) {
+function createGalleryItem(item, index) {
 	const galleryItem = document.createElement('div');
 	galleryItem.className = 'gallery-item';
-	galleryItem.onclick = () => openModal(item.full);
-
+	galleryItem.onclick = () => openGalleryModal(index);
 	galleryItem.innerHTML = `
         <img src="${item.thumb}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300x250/667eea/ffffff?text=${encodeURIComponent(item.title)}'">
         <div class="gallery-item-info">
@@ -95,21 +26,190 @@ function createGalleryItem(item) {
             <p>${item.year}</p>
         </div>
     `;
-
 	return galleryItem;
 }
 
-function openModal(imageSrc) {
-	const modal = document.getElementById('modal');
-	const modalImg = document.getElementById('modal-img');
+// Global variables to track current gallery item and image within that item
+let currentGalleryIndex = 0;
+let currentImageIndex = 0;
+
+// Open the gallery modal at a specific gallery item index
+function openGalleryModal(galleryIndex = 0) {
+	currentGalleryIndex = galleryIndex;
+	currentImageIndex = 0; // Start with first image of the selected gallery item
+
+	// Create modal if it doesn't exist
+	let modal = document.getElementById('gallery-modal');
+	if (!modal) {
+		modal = createGalleryModal();
+		document.body.appendChild(modal);
+	}
+
+	updateModalContent();
 	modal.style.display = 'flex';
-	modalImg.src = imageSrc;
+	document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
 
-function closeModal() {
-	const modal = document.getElementById('modal');
-	modal.style.display = 'none';
+// Create the modal structure
+function createGalleryModal() {
+	const modal = document.createElement('div');
+	modal.id = 'gallery-modal';
+	modal.className = 'gallery-modal';
+
+	modal.innerHTML = `
+        <div class="modal-overlay" onclick="closeGalleryModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeGalleryModal()">&times;</button>
+            
+            <button class="modal-nav modal-prev" onclick="previousImage()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15,18 9,12 15,6"></polyline>
+                </svg>
+            </button>
+            
+            <div class="modal-image-container">
+                <img id="modal-image" src="" alt="" />
+                <div class="modal-info">
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-author"></p>
+                    <p id="modal-year"></p>
+                </div>
+            </div>
+            
+            <button class="modal-nav modal-next" onclick="nextImage()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9,18 15,12 9,6"></polyline>
+                </svg>
+            </button>
+        </div>
+    `;
+
+	// Add touch/swipe support
+	addSwipeSupport(modal);
+
+	return modal;
 }
+
+// Update modal content with current image
+function updateModalContent() {
+	const currentGalleryItem = galleryData[currentGalleryIndex];
+	const currentImage = currentGalleryItem.images[currentImageIndex];
+
+	document.getElementById('modal-image').src = currentImage;
+	document.getElementById('modal-image').alt = currentGalleryItem.title;
+	document.getElementById('modal-title').textContent = currentGalleryItem.title;
+	document.getElementById('modal-author').textContent = currentGalleryItem.author;
+	document.getElementById('modal-year').textContent = currentGalleryItem.year;
+
+	// Update navigation button states
+	const prevBtn = document.querySelector('.modal-prev');
+	const nextBtn = document.querySelector('.modal-next');
+
+	if (prevBtn && nextBtn) {
+		// Disable prev button if at first image of first gallery item
+		const isFirstImage = currentGalleryIndex === 0 && currentImageIndex === 0;
+		prevBtn.style.opacity = isFirstImage ? '0.5' : '1';
+
+		// Disable next button if at last image of last gallery item
+		const isLastGalleryItem = currentGalleryIndex === galleryData.length - 1;
+		const isLastImageOfCurrentItem = currentImageIndex === currentGalleryItem.images.length - 1;
+		const isLastImage = isLastGalleryItem && isLastImageOfCurrentItem;
+		nextBtn.style.opacity = isLastImage ? '0.5' : '1';
+	}
+}
+
+// Navigation functions
+function nextImage() {
+	const currentGalleryItem = galleryData[currentGalleryIndex];
+
+	// If not at last image of current gallery item, go to next image
+	if (currentImageIndex < currentGalleryItem.images.length - 1) {
+		currentImageIndex++;
+	}
+	// If at last image of current gallery item, go to first image of next gallery item
+	else if (currentGalleryIndex < galleryData.length - 1) {
+		currentGalleryIndex++;
+		currentImageIndex = 0;
+	}
+	// If at last image of last gallery item, do nothing
+
+	updateModalContent();
+}
+
+function previousImage() {
+	// If not at first image of current gallery item, go to previous image
+	if (currentImageIndex > 0) {
+		currentImageIndex--;
+	}
+	// If at first image of current gallery item, go to last image of previous gallery item
+	else if (currentGalleryIndex > 0) {
+		currentGalleryIndex--;
+		const previousGalleryItem = galleryData[currentGalleryIndex];
+		currentImageIndex = previousGalleryItem.images.length - 1;
+	}
+	// If at first image of first gallery item, do nothing
+
+	updateModalContent();
+}
+
+// Close modal
+function closeGalleryModal() {
+	const modal = document.getElementById('gallery-modal');
+	if (modal) {
+		modal.style.display = 'none';
+		document.body.style.overflow = 'auto'; // Restore scrolling
+	}
+}
+
+// Add swipe support for touch devices
+function addSwipeSupport(modal) {
+	let startX = 0;
+	let startY = 0;
+	let endX = 0;
+	let endY = 0;
+
+	const imageContainer = modal.querySelector('.modal-image-container');
+
+	imageContainer.addEventListener('touchstart', (e) => {
+		startX = e.touches[0].clientX;
+		startY = e.touches[0].clientY;
+	});
+
+	imageContainer.addEventListener('touchend', (e) => {
+		endX = e.changedTouches[0].clientX;
+		endY = e.changedTouches[0].clientY;
+
+		const deltaX = startX - endX;
+		const deltaY = startY - endY;
+
+		// Only swipe if horizontal movement is greater than vertical
+		if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+			if (deltaX > 0) {
+				nextImage(); // Swipe left - next image
+			} else {
+				previousImage(); // Swipe right - previous image
+			}
+		}
+	});
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+	const modal = document.getElementById('gallery-modal');
+	if (modal && modal.style.display === 'flex') {
+		switch (e.key) {
+			case 'ArrowLeft':
+				previousImage();
+				break;
+			case 'ArrowRight':
+				nextImage();
+				break;
+			case 'Escape':
+				closeGalleryModal();
+				break;
+		}
+	}
+});
 
 // Navigation Functions
 function initializeNavigation() {
@@ -230,7 +330,5 @@ function updateGalleryItem(index, updatedItem) {
 window.portfolioFunctions = {
 	addGalleryItem,
 	updateGalleryItem,
-	openModal,
-	closeModal,
 	handleSubmit
 };
