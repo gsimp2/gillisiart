@@ -1,69 +1,69 @@
 // Gallery data - Easy to modify
-const galleryData = [
-	{
-		thumb: window.assetsPath + "4Austens-main.JPG",
-		full: window.assetsPath + "4Austens-bottom.JPG",
-		title: "Jane Austen Collection",
-		medium: "Fore-Edge Painting",
-		year: "2024"
-	},
-	{
-		thumb: window.assetsPath + "Dune-aesthetic.JPG",
-		full: window.assetsPath + "Dune-main.JPG",
-		title: "Dune",
-		medium: "Fore-Edge Painting",
-		year: "2024"
-	},
-	{
-		thumb: window.assetsPath + "KingArthur-main.JPG",
-		full: window.assetsPath + "KingArthur-top.JPG",
-		title: "Arthurian Myths and Legends",
-		medium: "Fore-Edge Painting",
-		year: "2024"
-	},
-	{
-		thumb: window.assetsPath + "OrientExpress-main.JPG",
-		full: window.assetsPath + "OrientExpress-main.JPG",
-		title: "Murder on the Orient Express",
-		medium: "Fore-Edge Painting",
-		year: "2024"
-	},
-	{
-		thumb: window.assetsPath + "WoO-aesthetic.JPG",
-		full: window.assetsPath + "WoO-main.JPG",
-		title: "The Wizard of Oz",
-		medium: "Fore-Edge Painting",
-		year: "2025"
-	},
-	{
-		thumb: window.assetsPath + "Austen-stack.JPG",
-		full: window.assetsPath + "Austen-stack-main.JPG",
-		title: "Pride & Prejudice, Emma, Mansfield Park",
-		medium: "Fore-Edge Painting",
-		year: "2023"
-	},
-	{
-		thumb: window.assetsPath + "LOTR-lothlorien-main.JPG",
-		full: window.assetsPath + "LOTR-lothlorien-main.JPG",
-		title: "Lord of the Rings",
-		medium: "Fore-Edge Painting",
-		year: "2023"
-	},
-	{
-		thumb: window.assetsPath + "HHGTTG-main.JPG",
-		full: window.assetsPath + "HHGTTG-main.JPG",
-		title: "The Hitchhiker's Guide to the Galaxy",
-		medium: "Fore-Edge Painting",
-		year: "2023"
-	},
-	{
-		thumb: window.assetsPath + "AiW-stack-main.JPG",
-		full: window.assetsPath + "AiW-stack-top.JPG",
-		title: "Alice's Adventures in Wonderland",
-		medium: "Fore-Edge Painting",
-		year: "2023"
-	}
-];
+// const galleryData = [
+// 	{
+// 		thumb: window.assetsPath + "4Austens-main.JPG",
+// 		full: window.assetsPath + "4Austens-bottom.JPG",
+// 		title: "Jane Austen Collection",
+// 		author: "Jane Austen",
+// 		year: "2024"
+// 	},
+// 	{
+// 		thumb: window.assetsPath + "Dune-aesthetic.JPG",
+// 		full: window.assetsPath + "Dune-main.JPG",
+// 		title: "Dune",
+// 		author: "Frank Herbert",
+// 		year: "2024"
+// 	},
+// 	{
+// 		thumb: window.assetsPath + "KingArthur-main.JPG",
+// 		full: window.assetsPath + "KingArthur-top.JPG",
+// 		title: "Arthurian Myths and Legends",
+// 		author: "Edited by J.K. Jackson",
+// 		year: "2024"
+// 	},
+// 	{
+// 		thumb: window.assetsPath + "OrientExpress-main.JPG",
+// 		full: window.assetsPath + "OrientExpress-main.JPG",
+// 		title: "Murder on the Orient Express",
+// 		author: "Agatha Christie",
+// 		year: "2024"
+// 	},
+// 	{
+// 		thumb: window.assetsPath + "WoO-aesthetic.JPG",
+// 		full: window.assetsPath + "WoO-main.JPG",
+// 		title: "The Wizard of Oz",
+// 		author: "L. Frank Baum",
+// 		year: "2025"
+// 	},
+// 	{
+// 		thumb: window.assetsPath + "Austen-stack.JPG",
+// 		full: window.assetsPath + "Austen-stack-main.JPG",
+// 		title: "Pride & Prejudice, Emma, Mansfield Park",
+// 		author: "Jane Austen",
+// 		year: "2022 - 2023"
+// 	},
+// 	{
+// 		thumb: window.assetsPath + "LOTR-lothlorien-main.JPG",
+// 		full: window.assetsPath + "LOTR-lothlorien-main.JPG",
+// 		title: "Lord of the Rings",
+// 		author: "J.R.R. Tolkien",
+// 		year: "2024"
+// 	},
+// 	{
+// 		thumb: window.assetsPath + "HHGTTG-main.JPG",
+// 		full: window.assetsPath + "HHGTTG-main.JPG",
+// 		title: "The Hitchhiker's Guide to the Galaxy",
+// 		author: "Douglas Adams",
+// 		year: "2024"
+// 	},
+// 	{
+// 		thumb: window.assetsPath + "AiW-stack-main.JPG",
+// 		full: window.assetsPath + "AiW-stack-top.JPG",
+// 		title: "Alice's Adventures in Wonderland",
+// 		author: "Lewis Carroll",
+// 		year: "2023"
+// 	}
+// ];
 
 // Initialize the website when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
@@ -91,8 +91,8 @@ function createGalleryItem(item) {
 	galleryItem.innerHTML = `
         <img src="${item.thumb}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300x250/667eea/ffffff?text=${encodeURIComponent(item.title)}'">
         <div class="gallery-item-info">
-            <h3>${item.title}</h3>
-            <p>${item.medium} • ${item.year}</p>
+            <h3>${item.title}<p>${item.author}</p></h3>
+            <p>${item.year}</p>
         </div>
     `;
 
