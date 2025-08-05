@@ -1,0 +1,32 @@
+---
+layout: default
+title: Fore-Edge Paintings
+css_files:
+- "main.css"
+- "gallery.css"
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+<style>
+	.hero {
+		background-image: url('{{ "assets/images/stack3.JPG" | relative_url }}');
+		height: 50vh;
+		background-position: center;
+	}
+</style>
+<script src="{{ '/assets/js/foreedge.js' | relative_url }}"></script>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+	<div class="hero-content">
+		<h1>Fore-Edge Paintings</h1>
+	</div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery">
+	<div class="container">
+		<div class="gallery-grid" id="gallery-grid">
+			<!-- Gallery items will be loaded by JavaScript -->
+		</div>
+	</div>
+</section>
