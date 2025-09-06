@@ -23,9 +23,12 @@ function createGalleryItem(item, index) {
 	$galleryItem.html(`
         <img src="${item.thumb}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300x250/667eea/ffffff?text=${encodeURIComponent(item.title)}'">
         <div class="gallery-item-info">
-            <h3>${item.title}<p>${item.author}</p></h3>
-            <p>${item.year}</p>
-        </div>
+			<div>
+				<h3 class="gallery-title">${item.title}</h3>
+				<p class="gallery-author">${item.author}</p>
+			</div>
+			<p class="gallery-year">${item.year}</p>
+		</div>
     `);
 
 	return $galleryItem;
@@ -60,7 +63,6 @@ function createGalleryModal() {
 
 	$modal.html(`
         <div class="modal-overlay"></div>
-        <div class="modal-content">
             <button class="modal-close">&times;</button>
             
             <button class="modal-nav modal-prev">
@@ -72,9 +74,11 @@ function createGalleryModal() {
             <div class="modal-image-container">
                 <img id="modal-image" src="" alt="" />
                 <div class="modal-info">
-                    <h3 id="modal-title"></h3>
-                    <p id="modal-author"></p>
-                    <p id="modal-year"></p>
+					<div>
+						<h3 class="gallery-title" id="modal-title"></h3>
+						<p class="gallery-author" id="modal-author"></p>
+					</div>
+					<p class="gallery-year" id="modal-year"></p>
                 </div>
             </div>
             
@@ -113,50 +117,33 @@ function updateModalContent() {
 	const $nextBtn = $('.modal-next');
 
 	if ($prevBtn.length && $nextBtn.length) {
-		// Disable prev button if at first image of first gallery item
-		const isFirstImage = currentGalleryIndex === 0 && currentImageIndex === 0;
+		// Disable prev button if at first image of current gallery item
+		const isFirstImage = currentImageIndex === 0;
 		$prevBtn.css('opacity', isFirstImage ? '0.5' : '1');
 
-		// Disable next button if at last image of last gallery item
-		const isLastGalleryItem = currentGalleryIndex === galleryData.length - 1;
-		const isLastImageOfCurrentItem = currentImageIndex === currentGalleryItem.images.length - 1;
-		const isLastImage = isLastGalleryItem && isLastImageOfCurrentItem;
+		// Disable next button if at last image of current gallery item
+		const isLastImage = currentImageIndex === currentGalleryItem.images.length - 1;
 		$nextBtn.css('opacity', isLastImage ? '0.5' : '1');
 	}
 }
 
-// Navigation functions
+// Navigation functions - only navigate within current gallery item
 function nextImage() {
 	const currentGalleryItem = galleryData[currentGalleryIndex];
 
-	// If not at last image of current gallery item, go to next image
+	// Only go to next image if not at last image of current gallery item
 	if (currentImageIndex < currentGalleryItem.images.length - 1) {
 		currentImageIndex++;
+		updateModalContent();
 	}
-	// If at last image of current gallery item, go to first image of next gallery item
-	else if (currentGalleryIndex < galleryData.length - 1) {
-		currentGalleryIndex++;
-		currentImageIndex = 0;
-	}
-	// If at last image of last gallery item, do nothing
-
-	updateModalContent();
 }
 
 function previousImage() {
-	// If not at first image of current gallery item, go to previous image
+	// Only go to previous image if not at first image of current gallery item
 	if (currentImageIndex > 0) {
 		currentImageIndex--;
+		updateModalContent();
 	}
-	// If at first image of current gallery item, go to last image of previous gallery item
-	else if (currentGalleryIndex > 0) {
-		currentGalleryIndex--;
-		const previousGalleryItem = galleryData[currentGalleryIndex];
-		currentImageIndex = previousGalleryItem.images.length - 1;
-	}
-	// If at first image of first gallery item, do nothing
-
-	updateModalContent();
 }
 
 // Close modal

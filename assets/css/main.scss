@@ -118,6 +118,10 @@ nav .nav-item {
 	background-repeat: no-repeat;
 }
 
+.hero-tall {
+	padding-top: 10px;
+}
+
 .hero::before {
 	content: '';
 	position: absolute;
@@ -264,14 +268,6 @@ nav .nav-item {
 		height: 35px;
 		font-size: 20px;
 	}
-
-	.modal-info h3 {
-		font-size: 1.1rem;
-	}
-
-	.modal-info p {
-		font-size: 0.8rem;
-	}
 }
 
 @media (max-width: 480px) {
@@ -281,10 +277,6 @@ nav .nav-item {
 
 	.modal-image-container img {
 		max-height: 50vh;
-	}
-
-	.modal-info h3 {
-		font-size: 1rem;
 	}
 
 	.modal-counter {
