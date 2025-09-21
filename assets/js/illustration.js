@@ -29,7 +29,9 @@ function createGalleryItem(item) {
 	$galleryItem.html(`
         <img src="${item.image}" 
              alt="${item.title}" 
-             class="img-fluid w-100" 
+             class="img-fluid w-100"
+			 loading="lazy"
+             decoding="async"
              onerror="this.src='https://via.placeholder.com/300x250/667eea/ffffff?text=${encodeURIComponent(item.title)}'">
     `);
 
