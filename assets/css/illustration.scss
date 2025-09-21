@@ -1,0 +1,19 @@
+--- 
+---
+
+.gallery {
+	padding: 50px 0px;
+}
+
+.container {
+	padding: 5px !important;
+}
+
+.gallery-item img {
+	object-fit: contain;
+}
+
+.gallery .row > [class*="col-"] {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+}
