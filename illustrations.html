@@ -13,6 +13,8 @@ css_files:
 		background-position: center;
 	}
 </style>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script src="{{ '/assets/js/illustration.js' | relative_url }}"></script>
 
 <!-- Hero Section -->
@@ -25,10 +27,14 @@ css_files:
 <!-- Gallery Section -->
 <section id="gallery" class="gallery">
 	<div class="container">
-		<div class="row">
-			<div class="col-4" id="column1"></div>
-			<div class="col-4" id="column2"></div>
-			<div class="col-4" id="column3"></div>
-		</div>
+		<div class="gallery-grid" id="galleryContainer"></div>
+	</div>
+</section>
+
+<!-- Wonder Woman Section -->
+<section id="gallery" class="gallery">
+	<div class="container">
+		<h2>Wonder Woman Animated Series Concept Art</h2>
+		<div class="gallery-grid" id="wonderwoman"></div>
 	</div>
 </section>

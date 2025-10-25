@@ -2,18 +2,43 @@
 ---
 
 .gallery {
-	padding: 50px 0px;
+    padding: 50px 0px;
+}
+
+.gallery h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.gallery + .gallery {
+    border-top: 1px solid #e0e0e0;
 }
 
 .container {
-	padding: 5px !important;
+    padding: 5px !important;
 }
-
+.gallery-grid {
+    /* Masonry will handle the layout */
+}
+.gallery-item {
+    width: calc(33.333% - 10px);
+    margin-bottom: 15px;
+}
 .gallery-item img {
-	object-fit: contain;
+    object-fit: contain;
+    width: 100%;
+    display: block;
 }
 
-.gallery .row > [class*="col-"] {
-    padding-left: 7.5px;
-    padding-right: 7.5px;
+/* Responsive breakpoints */
+@media (max-width: 767px) {
+    .gallery-item {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .gallery-item {
+        width: calc(50% - 7.5px);
+    }
 }
