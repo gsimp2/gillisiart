@@ -18,10 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Gillisi Art Portfolio
+title: Gillisi Art
 email: gillisiart@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-baseurl: "/gillisiart" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://gsimp2.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
