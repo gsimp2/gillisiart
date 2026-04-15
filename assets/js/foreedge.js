@@ -1,8 +1,6 @@
 // Initialize the website when DOM is loaded
 $(document).ready(function () {
 	initializeGallery();
-	initializeNavigation();
-	initializeScrollEffects();
 	initializeAnimations();
 });
 
@@ -258,6 +256,5 @@ function updateGalleryItem(index, updatedItem) {
 // Export functions for potential use in other files
 window.portfolioFunctions = {
 	addGalleryItem,
-	updateGalleryItem,
-	handleSubmit
+	updateGalleryItem
 };
