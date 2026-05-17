@@ -28,6 +28,10 @@ function initializeGallery() {
 				gutter: 15
 			});
 		});
+
+		imagesLoaded($mainContainer).on('progress', function () {
+			masonryMain.layout();
+		});
 	}
 
 	// Initialize Masonry for Wonder Woman gallery
